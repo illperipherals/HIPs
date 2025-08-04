@@ -6,7 +6,6 @@
 - **Status:** Draft
 - **Discussions-To:** [https://discord.com/channels/404106811252408320/1075540098197757962]
 - **Created:** 2025-08-04
-- **License:** Apache 2.0
 
 ## Summary
 
