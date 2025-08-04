@@ -1,4 +1,4 @@
-# HIP-XXXX: Delegated Proof-of-Coverage (PISSD) for Meshed Gateways
+# HIP-XXXX: Delegated Proof-of-Coverage for Meshed Gateways
 
 - **Author(s):** Travis L. Teague
 - **Start Date:** 2025-08-04
