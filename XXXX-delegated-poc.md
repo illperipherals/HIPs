@@ -44,6 +44,21 @@ As a result:
 - Off-chain reward distribution.
 - Eliminating incentives for Border Gateways.
 
+## Risks
+
+Non‑ECC gateways can’t sign a trusted hardware attestation that they actually heard or sent a PoC packet.
+That means:
+	•	A malicious Border Gateway could fabricate witness receipts for fake “meshed” nodes.
+	•	A dishonest operator could set up dozens of “virtual” nodes and feed fake RF metrics to collect rewards.
+
+Mitigation
+
+Require Border Gateway-Level Reputation
+	•	All delegated PoC submissions from a given Border Gateway are tied to its on‑chain ID.
+	•	If a Border Gateway submits consistently suspicious PoC events (e.g., too many perfect SNR witnesses, unusual packet timing), governance could slash or deny its relay incentive.
+	•	A poor‑reputation Border Gateway can lose the ability to submit delegated PoC receipts.
+ 
+
 ## Specification
 
 ### 1. Virtual Gateway Identities
