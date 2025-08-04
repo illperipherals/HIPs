@@ -48,16 +48,36 @@ As a result:
 
 Non‑ECC gateways can’t sign a trusted hardware attestation that they actually heard or sent a PoC packet.
 That means:
-	•	A malicious Border Gateway could fabricate witness receipts for fake “meshed” nodes.
-	•	A dishonest operator could set up dozens of “virtual” nodes and feed fake RF metrics to collect rewards.
+- A malicious Border Gateway could fabricate witness receipts for fake “meshed” nodes.
+- A dishonest operator could set up dozens of “virtual” nodes and feed fake RF metrics to collect rewards.
 
-Mitigation
+## Mitigation
 
-Require Border Gateway-Level Reputation
-	•	All delegated PoC submissions from a given Border Gateway are tied to its on‑chain ID.
-	•	If a Border Gateway submits consistently suspicious PoC events (e.g., too many perfect SNR witnesses, unusual packet timing), governance could slash or deny its relay incentive.
-	•	A poor‑reputation Border Gateway can lose the ability to submit delegated PoC receipts.
- 
+### Require Border Gateway-Level Reputation
+- All delegated PoC submissions from a given Border Gateway are tied to its on‑chain ID.
+- If a Border Gateway submits consistently suspicious PoC events (e.g., too many perfect SNR witnesses, unusual packet timing), governance could slash or deny its relay incentive.
+- A poor‑reputation Border Gateway can lose the ability to submit delegated PoC receipts.
+
+### Use Replay-Resistant Signing, Even Without ECC
+
+Even without ECC chips, each meshed node can:
+
+- Generate a standard software keypair (Ed25519 or similar).
+- Store it in firmware or on a secure SD card.
+- Sign per‑packet proofs that include:
+	- Nonce
+	- Timestamp
+	- Packet hash
+- Border Gateway forwards these signed receipts.
+
+Without ECC, you lose hardware‑bound proof, but you still have cryptographic replay prevention.
+
+### Reward Throttling for New Identities
+
+To slow down Sybil farming:
+- Limit max PoC rewards in first 30 days for a newly‑registered meshed gateway.
+- Ramp rewards up over time if the node passes plausibility checks.
+- This makes large‑scale fake deployments slower and less profitable.
 
 ## Specification
 
