@@ -12,7 +12,6 @@
 
 **PISSD:** PoC Integration for Solar‑Scaled Deployments
 
-![Delegated Proof-of-Coverage Diagram](delegated-poc-diagram.png)
 This HIP proposes **Delegated Proof-of-Coverage (PoC)** to enable meshed gateways in ChirpStack/RAKWireless deployments to earn PoC rewards on-chain.  
 In this model, a **Border Gateway** cryptographically submits PoC witness/challenge receipts on behalf of **upstream meshed gateways**.  
 Each meshed node has its own on-chain identity and receives rewards for its RF work.
