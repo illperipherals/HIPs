@@ -1,6 +1,6 @@
 # HIP-XXXX: Delegated Proof-of-Coverage for Meshed Gateways
 
-- **Author(s):** Travis L. Teague
+- **Author(s):** tteague
 - **Start Date:** 2025-08-04
 - **Category:** Technical
 - **Status:** Draft
